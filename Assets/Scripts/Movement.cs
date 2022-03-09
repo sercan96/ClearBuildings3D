@@ -7,10 +7,12 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField]
-    float speed =5;
+    float speed =5f;
+    [SerializeField]
+    float jumpPower = 13f;
     void Start()
     {
-         rb = GetComponent<Rigidbody>(); // Yeni bir rigidbody oluşturduk new leme işlemi
+        rb = GetComponent<Rigidbody>(); // Yeni bir rigidbody oluşturduk new leme işlemi
     }
 
     
@@ -24,18 +26,22 @@ public class Movement : MonoBehaviour
         // transform.Translate(transform.forward);
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector3(rb.velocity.x,(speed * 100) * Time.deltaTime,0f);    
+            rb.velocity = new Vector3(rb.velocity.x,Mathf.Clamp((jumpPower * 100) * Time.deltaTime,0f,15f),0f);    
             Debug.Log("Jump");
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetKey(KeyCode.A))
         {
-            rb.velocity = new Vector3((-speed *100) * Time.deltaTime,rb.velocity.y,0f);
+            rb.velocity = new Vector3(Mathf.Clamp((-speed *100) * Time.deltaTime,-15f,0f),rb.velocity.y,0f);
             Debug.Log("Left");
         }
-        else if(Input.GetKeyDown(KeyCode.D))
+        else if(Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector3(0f,rb.velocity.y,(speed *100) * Time.deltaTime);
+            rb.velocity = new Vector3(Mathf.Clamp((speed *100) * Time.deltaTime,0f,15f),rb.velocity.y,0f);
             Debug.Log("Right");
+        }
+        else
+        {
+            rb.velocity = new Vector3(0f,rb.velocity.y,0f);
         }
     }
 }
