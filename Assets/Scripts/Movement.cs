@@ -43,7 +43,6 @@ public class Movement : MonoBehaviour
             // Yumuşak bir dönüş için Quaternion.Lerp komutu kullanılır.
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f,0f,0f),turnspeed * Time.deltaTime);
             rb.velocity = new Vector3(Mathf.Clamp((speed *100) * Time.deltaTime,0f,15f),rb.velocity.y,0f);
-
         }
         else
         {
