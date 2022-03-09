@@ -31,11 +31,14 @@ public class Movement : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.A))
         {
+            // transform.Rotate(0f,-180f,0f); Her A ya basılı tuttuğumuzda y eksenine -180 ekleyecek. bu yüzden rotation kullandık eşitleme ile.
+            transform.rotation = Quaternion.Euler(0f,-180f,0f);
             rb.velocity = new Vector3(Mathf.Clamp((-speed *100) * Time.deltaTime,-15f,0f),rb.velocity.y,0f);
             Debug.Log("Left");
         }
         else if(Input.GetKey(KeyCode.D))
         {
+            transform.rotation = Quaternion.Euler(0f,0f,0f);
             rb.velocity = new Vector3(Mathf.Clamp((speed *100) * Time.deltaTime,0f,15f),rb.velocity.y,0f);
             Debug.Log("Right");
         }
