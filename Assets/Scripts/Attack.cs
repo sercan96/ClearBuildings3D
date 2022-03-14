@@ -7,13 +7,17 @@ public class Attack : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject firePos;
     [SerializeField] float rateOfFire;
-    [SerializeField] int ammoCount =5;
-
-    //PowerUp pu; 
+    public int ammoCount =5;
+    // private Rigidbody rb; // Başka bir objenin Rigidbody si ile işlem yap.
+    // private Rigidbody rb2;  // Bu scripte bağlı olan objenin Rigidbody si ile işlem yap.
 
     void Start()
     {
-        // pu = GetComponent<PowerUp>(); // bu scriptin bağlı olduğu objeyle işlem yap.
+        // rb = GameObject.Find("Enemy").GetComponent<Rigidbody>(); // İnstance almak gibi.
+        // rb.mass =15;
+        // rb2 = GetComponent<Rigidbody>();
+        // rb2.mass = 5;
+        
     }   
     void Update()
     {
@@ -26,7 +30,7 @@ public class Attack : MonoBehaviour
         {
 
             float difference = 180 - transform.eulerAngles.y;
-            Debug.Log("difference : " + difference);
+            // Debug.Log("difference : " + difference);
             if(rateOfFire <=0 && ammoCount >0)
             {
                 if(Mathf.Abs(difference) >= 90) // Merminin ne tarafa bakacağını belirledik.
