@@ -16,10 +16,10 @@ public int GetHealth
     set
     {
         currentHealth = value; 
-        if(currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
+        // if(currentHealth > maxHealth)
+        // {
+        //     currentHealth = maxHealth;
+        // }
     }
 
 }

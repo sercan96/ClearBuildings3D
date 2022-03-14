@@ -6,13 +6,14 @@ public class PowerUp : MonoBehaviour
 {
     [Header("Health Setting")]
     public bool healthPowerUp =false;
-     [Header("Ammo Setting")]
+    [SerializeField] int  healthAmount = 1;
+    [Header("Ammo Setting")]
     public bool ammoPowerUp =false;   
-   [SerializeField] int  healthAmount = 1;
+
    [SerializeField] int  ammoAmount = 5;
    Attack attack;
    Target target;
-   private int turnspeed =5;
+   private int turnspeed =2;
     void Start()
     {
         attack =GameObject.Find("Player").GetComponent<Attack>();
@@ -37,7 +38,14 @@ public class PowerUp : MonoBehaviour
     }
     void Update()
     {
-        transform.Rotate(turnspeed,0,0);
+        if(healthPowerUp)
+        {
+            Rotate(transform.up * turnspeed);
+        }
+        else
+        {
+           Rotate(transform.right * turnspeed);
+        }
     }
     void OnTriggerEnter(Collider other)
     {
@@ -58,6 +66,9 @@ public class PowerUp : MonoBehaviour
             }
             Destroy(gameObject);
         }
-
+    }
+    void Rotate(Vector3 rotate)
+    {
+        transform.Rotate(rotate.x,rotate.y,rotate.z);
     }
 }
