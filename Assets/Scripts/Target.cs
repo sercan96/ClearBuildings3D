@@ -7,6 +7,22 @@ public class Target : MonoBehaviour
     
 [SerializeField] private int maxHealth =3; // maxHealth inspector'de bir kez değiştirilecek.
 private int currentHealth;
+public int GetHealth
+{
+    get
+    {
+        return currentHealth;
+    }
+    set
+    {
+        currentHealth = value; 
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+}
 
 void Start()
 {
@@ -14,7 +30,7 @@ void Start()
 }
  private void OnTriggerEnter(Collider other) // 3.Yol
  {
-     if(other.gameObject.GetComponent<bulletMovement>())
+     if(other.gameObject.GetComponent<bulletMovement>() && !gameObject.CompareTag("Player"))
      {
         Destroy(other.gameObject);
         currentHealth--;

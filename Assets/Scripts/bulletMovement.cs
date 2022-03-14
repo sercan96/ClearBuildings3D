@@ -10,6 +10,7 @@ public class bulletMovement : MonoBehaviour
     // transform.position ile hareket
     Rigidbody rb;
     [SerializeField] int speed;
+
     void Start()
     {
         rb =GetComponent<Rigidbody>();
@@ -38,6 +39,12 @@ public class bulletMovement : MonoBehaviour
     void MovementPosition()
     {
         transform.position += transform.up * Time.deltaTime * speed; // local y açısı
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Target>() == false && other.gameObject.tag != "Player") 
+        // çarptığı objede Target scripti yoksa ve player objem değilse mermiyi yok et.
+        Destroy(gameObject);
     }
 
 }

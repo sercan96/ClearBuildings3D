@@ -9,9 +9,11 @@ public class Attack : MonoBehaviour
     [SerializeField] float rateOfFire;
     [SerializeField] int ammoCount =5;
 
+    //PowerUp pu; 
+
     void Start()
     {
-        
+        // pu = GetComponent<PowerUp>(); // bu scriptin bağlı olduğu objeyle işlem yap.
     }   
     void Update()
     {
@@ -24,16 +26,18 @@ public class Attack : MonoBehaviour
         {
 
             float difference = 180 - transform.eulerAngles.y;
+            Debug.Log("difference : " + difference);
             if(rateOfFire <=0 && ammoCount >0)
             {
-                if(difference >= 90) // Merminin ne tarafa bakacağını belirledik.
-                {                 
-                    GameObject bulletprefabRotate = Instantiate(bulletPrefab,firePos.gameObject.transform.position,
-                    Quaternion.Euler(0f,0f,-90f));            
+                if(Mathf.Abs(difference) >= 90) // Merminin ne tarafa bakacağını belirledik.
+                {              
+                    Debug.Log("sol");   
+                    Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,-90f));    // sağ (90 dan büyük)      
                 }
                 else
-                {                    
-                    Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,90f));   
+                {            
+                    Debug.Log("sağ");   
+                    Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,90f));   // sol (90 dan küçük)
                 }   
                 rateOfFire = 0.2f; 
                 ammoCount --;                    

@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     {
         rb.velocity = new Vector3(direction.x, rb.velocity.y, direction.y);
     }
-    void TakeInput()  
+    public void TakeInput()  
     {
         //transform.Translate(Vector3.forward);
         // transform.Translate(transform.forward);
