@@ -67,8 +67,8 @@ public class PowerUp : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Rotate(Vector3 rotate)
+    void Rotate(Vector3 rotate) // Vector3.right =(1,0,0);
     {
-        transform.Rotate(rotate.x,rotate.y,rotate.z);
-    }
+        transform.Rotate(rotate.x,rotate.y,rotate.z);   
+    } 
 }
