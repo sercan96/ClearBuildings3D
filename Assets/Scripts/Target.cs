@@ -23,10 +23,12 @@ public int GetHealth
     }
 
 }
+GameObject deadParticle;
 
 void Start()
 {
     currentHealth = maxHealth; // Bunu yapmamızın sebebi maxHealth değerini sabit tutmak
+    deadParticle = GameObject.FindGameObjectWithTag("Particle");
 }
  private void OnTriggerEnter(Collider other) // 3.Yol
  {
@@ -42,7 +44,8 @@ void Start()
  }
  void Die()
  {
-     Destroy(gameObject);
+    // deadParticle.gameObject.SetActive(true);
+    Destroy(gameObject);
  }
 
 }
