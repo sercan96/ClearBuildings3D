@@ -7,7 +7,9 @@ public class Attack : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject firePos;
     [SerializeField] float rateOfFire;
-    public int ammoCount =5;
+    [SerializeField] public int maxAmmo =30;
+    private int ammoCount = 30;
+    public int GetAmmo { get{return ammoCount;} set{ammoCount = value; if(ammoCount > maxAmmo) ammoCount = maxAmmo;  }}
     // private Rigidbody rb; // Başka bir objenin Rigidbody si ile işlem yap.
     // private Rigidbody rb2;  // Bu scripte bağlı olan objenin Rigidbody si ile işlem yap.
 

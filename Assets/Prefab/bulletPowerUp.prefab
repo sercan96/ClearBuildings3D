@@ -111,7 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fddc8ba4f0af24a96a185edfdc4123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthPowerUp: 0
   healthAmount: 1
+  ammoPowerUp: 1
+  ammoAmount: 5
+  period: 2
+  scaleFactor: 1
+  scaleVector: {x: 0.3, y: 0.3, z: 0.3}
 --- !u!1 &3249719767565686134
 GameObject:
   m_ObjectHideFlags: 0

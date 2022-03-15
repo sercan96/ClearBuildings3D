@@ -29,6 +29,10 @@ public class Movement : MonoBehaviour
         TakeInput();
         //print(OnGroundCheck());
     }
+    void FixedUpdate()
+    {
+        
+    }
     public void Move(Vector2 direction)
     {
         rb.velocity = new Vector3(direction.x, rb.velocity.y, direction.y);
