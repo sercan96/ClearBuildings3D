@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float speed ;
     [SerializeField] float jumpPower = 13f;
     [SerializeField] float turnspeed = 15;
+   
     
      
     // [SerializeField] List<Transform> ground = new List<Transform>();

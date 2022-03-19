@@ -16,9 +16,9 @@ public class EnemyShotControl : MonoBehaviour
     /// 1. Başlangıç pozisyonu
     /// 2. Hangi yönde olacağı
     /// 3. Uzunluğu
-    /// 4. Hangi objeye çarpacarsam sana true dönerim bilgisi
+    /// 4. Hangi fiziksel objeye çarparsam sana true dönerim bilgisi   
     /// </summary>
-    void Aim()
+    public void Aim()
     {
         bool hit = Physics.Raycast(aimTransform.position,transform.right,shotRange,shootLayer);
         Debug.DrawRay(aimTransform.position,transform.right * shotRange, Color.blue);
