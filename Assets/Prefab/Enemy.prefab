@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 7925253862674595037}
   - component: {fileID: 6125222294346239376}
   - component: {fileID: 3344486134993960816}
+  - component: {fileID: 123918206}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -561,6 +562,23 @@ MonoBehaviour:
   movePoint:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &123918206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7925253862674595036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7519c38e25c27443bbd6de3dfe40267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimTransform: {fileID: 1880735940430601301}
+  shotRange: 15
+  shootLayer:
+    serializedVersion: 2
+    m_Bits: 384
 --- !u!1 &7925253862720926650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,5 +1262,10 @@ PrefabInstance:
 --- !u!4 &4017231985109142335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4879292136258924681, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+  m_PrefabInstance: {fileID: 8392081238681549750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1880735940430601301 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7957612274879326179, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
   m_PrefabInstance: {fileID: 8392081238681549750}
   m_PrefabAsset: {fileID: 0}

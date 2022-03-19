@@ -17,13 +17,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if(!canMoveRight)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f,180f,0f),speed * Time.deltaTime); 
-            LookAtTarget(movePoint[0].position); // rotasyonu sağladık.
+            LookAtTarget(180f);           
+            MoveTarget(movePoint[0].position); // rotasyonu sağladık.
         }
         else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f,0f,0f),speed * Time.deltaTime);
-            LookAtTarget(movePoint[1].position);
+            LookAtTarget(0f);
+            MoveTarget(movePoint[1].position);
         }
 
     }
@@ -42,8 +42,12 @@ public class EnemyMovement : MonoBehaviour
             
         }
     }
-    void LookAtTarget(Vector3 movePoint)
+    void MoveTarget(Vector3 movePoint)
     {
         transform.position = Vector3.MoveTowards(transform.position,movePoint,speed * Time.deltaTime);
+    }
+    void LookAtTarget(float rotate)
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f,rotate,0f),speed * Time.deltaTime);  
     }
 }
