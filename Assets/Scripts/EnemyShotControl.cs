@@ -7,10 +7,20 @@ public class EnemyShotControl : MonoBehaviour
     [SerializeField] private Transform aimTransform;
     [SerializeField] private float shotRange = 10;
     [SerializeField] private LayerMask shootLayer;
+    private Attack attackScript;
+
+    void Start()
+    {
+        attackScript = GetComponent<Attack>();
+    }
 
     void Update()
     {
-        Aim();
+        if(Aim())
+        {
+            Fire();
+        }
+     
     }
     /// <summary>
     /// 1. Başlangıç pozisyonu
@@ -18,14 +28,15 @@ public class EnemyShotControl : MonoBehaviour
     /// 3. Uzunluğu
     /// 4. Hangi fiziksel objeye çarparsam sana true dönerim bilgisi   
     /// </summary>
-    public void Aim()
+    public bool Aim()
     {
         bool hit = Physics.Raycast(aimTransform.position,transform.right,shotRange,shootLayer);
         Debug.DrawRay(aimTransform.position,transform.right * shotRange, Color.blue);
         print("Can shoot" + hit);
-        if(hit)
-        {
-            Destroy(GameObject.Find("Player"));
-        }
+        return hit;
+    }
+    void Fire()
+    {
+        attackScript.Enemy(0.8f);
     }
 }

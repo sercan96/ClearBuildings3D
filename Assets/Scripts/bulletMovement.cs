@@ -42,7 +42,7 @@ public class bulletMovement : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Target>() == null && other.gameObject.tag != "Player" && other.gameObject.name != "healthPowerUp" && other.gameObject.name !="ammoPowerUp") 
+        if(other.gameObject.GetComponent<Target>() == null && other.gameObject.tag == "Player" && other.gameObject.name != "healthPowerUp" && other.gameObject.name !="ammoPowerUp") 
         // çarptığı objede Target scripti yoksa ve player objem değilse mermiyi yok et.
         {
             Destroy(gameObject);

@@ -31,7 +31,7 @@ void Start()
 }
  private void OnTriggerEnter(Collider other) // 3.Yol
  {
-     if(other.gameObject.GetComponent<bulletMovement>() && !gameObject.CompareTag("Player"))
+     if(other.gameObject.GetComponent<bulletMovement>())
      {
         Destroy(other.gameObject);
         currentHealth--;

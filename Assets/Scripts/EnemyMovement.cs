@@ -7,16 +7,24 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Transform[] movePoint;
     private bool canMoveRight = false;
     private float speed =5;
-
+    private EnemyShotControl enemyShotControl;
+    private Attack attack;
+    
+    void Start()
+    {
+        enemyShotControl = GetComponent<EnemyShotControl>();
+        attack = GetComponent<Attack>();
+    }
     void Update()
     {
         CheckMoveRight();
         MoveTowards();
     }
+
     void MoveTowards() // Başlangıç yerinden gideceği yere kadarki yolu belirleriz.
     {
         if(!canMoveRight)
-        {
+        {   
             LookAtTarget(180f);           
             MoveTarget(movePoint[0].position); // rotasyonu sağladık.
         }
@@ -44,6 +52,10 @@ public class EnemyMovement : MonoBehaviour
     }
     void MoveTarget(Vector3 movePoint)
     {
+        if(enemyShotControl.Aim() && attack.GetAmmo > 0)
+        {
+            return;
+        }
         transform.position = Vector3.MoveTowards(transform.position,movePoint,speed * Time.deltaTime);
     }
     void LookAtTarget(float rotate)

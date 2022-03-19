@@ -12,43 +12,59 @@ public class Attack : MonoBehaviour
     public int GetAmmo { get{return ammoCount;} set{ammoCount = value; if(ammoCount > maxAmmo) ammoCount = maxAmmo;  }}
     // private Rigidbody rb; // Başka bir objenin Rigidbody si ile işlem yap.
     // private Rigidbody rb2;  // Bu scripte bağlı olan objenin Rigidbody si ile işlem yap.
+    [SerializeField] private bool isPlayer = false;
+    [SerializeField] private bool isEnemy = false;
 
     void Start()
     {
-        // rb = GameObject.Find("Enemy").GetComponent<Rigidbody>(); // İnstance almak gibi.
-        // rb.mass =15;
-        // rb2 = GetComponent<Rigidbody>();
-        // rb2.mass = 5;
         
     }   
     void Update()
     {
-        rateOfFire -=Time.deltaTime;
-        Fire();
-    }
-    void Fire()
-    {
-        if(Input.GetMouseButtonDown(0))  
-        {
+        FireRange();
+        Player();
 
-            float difference = 180 - transform.eulerAngles.y;
-            // Debug.Log("difference : " + difference);
-            if(rateOfFire <=0 && ammoCount >0)
+    }
+    public void FireRange()
+    {
+         rateOfFire -=Time.deltaTime;
+    }
+    void Player()
+    {
+        if(isPlayer)
+        {
+            if(Input.GetMouseButtonDown(0)) 
             {
-                if(Mathf.Abs(difference) >= 90) // Merminin ne tarafa bakacağını belirledik.
-                {              
-                    Debug.Log("sol");   
-                    Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,-90f));    // sağ (90 dan büyük)      
-                }
-                else
-                {            
-                    Debug.Log("sağ");   
-                    Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,90f));   // sol (90 dan küçük)
-                }   
-                rateOfFire = 0.2f; 
-                ammoCount --;                    
+                Fire(0.2f);
             }
         }
-               
+    }
+    public void Enemy(float timeFire)
+    {
+       if(isEnemy)
+       {
+           Fire(timeFire);
+       }
+    }
+    void Fire(float timeofFire)
+    {                  
+        float difference = 180 - transform.eulerAngles.y;
+        // Debug.Log("difference : " + difference);
+        if(rateOfFire <=0 && ammoCount >0)
+        {
+            if(Mathf.Abs(difference) >= 90) // Merminin ne tarafa bakacağını belirledik.
+            {              
+                Debug.Log("sol");   
+                Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,-90f));    // sağ (90 dan büyük)      
+            }
+            else
+            {            
+                Debug.Log("sağ");   
+                Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,90f));   // sol (90 dan küçük)
+            }   
+            rateOfFire = timeofFire; 
+            ammoCount --;                                 
+        }
+                  
     }
 }
