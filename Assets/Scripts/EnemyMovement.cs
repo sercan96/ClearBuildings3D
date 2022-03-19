@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void MoveTarget(Vector3 movePoint)
     {
-        if(enemyShotControl.Aim() && attack.GetAmmo > 0)
+        if(enemyShotControl.Aim() && attack.GetAmmo > 0) // objenin raycastine hedef takıldıysa hareket etmesin, metodu kapat.
         {
             return;
         }
