@@ -6,11 +6,9 @@ public class ChooseWeapons : MonoBehaviour
 {
    [SerializeField] Attack attack;
    [SerializeField] private float FireRate;
-   [SerializeField] private GameObject FirePos;
+   [SerializeField] private Transform FirePos;
    [SerializeField] private int ammoCount;
 
-
-    
     void Update()
     {
         SelectWeapons();
@@ -27,13 +25,17 @@ public class ChooseWeapons : MonoBehaviour
             case "1":
                 attack.weapons[0].SetActive(true);
                 attack.weapons[1].SetActive(false);
+                attack.weapons[2].SetActive(false);
                 break;
             case "2":
                  attack.weapons[1].SetActive(true);
                  attack.weapons[0].SetActive(false);
+                 attack.weapons[2].SetActive(false);
                 break;
             case "3":
-
+                 attack.weapons[2].SetActive(true);
+                 attack.weapons[0].SetActive(false);
+                 attack.weapons[1].SetActive(false);
                 break;
             default:
                 break;

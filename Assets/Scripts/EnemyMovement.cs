@@ -41,12 +41,12 @@ public class EnemyMovement : MonoBehaviour
         if(Vector3.Distance(transform.position,movePoint[0].position) <= 0.1f)
         {
             canMoveRight = true;
-            print("Move Right");
+            // print("Move Right");
         }
         else if(Vector3.Distance(transform.position,movePoint[1].position) <= 0.1f)
         {
             canMoveRight = false;
-            print("Move Left");
+            // print("Move Left");
             
         }
     }

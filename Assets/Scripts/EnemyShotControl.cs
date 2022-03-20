@@ -52,7 +52,6 @@ public class EnemyShotControl : MonoBehaviour
     {
         bool hit = Physics.Raycast(aimTransform.position,transform.right,shotRange,shootLayer);
         Debug.DrawRay(aimTransform.position,transform.right * shotRange, Color.blue);
-        print("Can shoot" + hit);
         return hit;
     }
     void Fire()
