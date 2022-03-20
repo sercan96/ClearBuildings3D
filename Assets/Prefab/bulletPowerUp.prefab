@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3249719766868829818}
   - component: {fileID: 3249719766868829821}
   - component: {fileID: 7713625238973560042}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bulletPowerUp
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3249719767565686130}
   - component: {fileID: 3249719767565686133}
   - component: {fileID: 3249719767565686132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 3249719767769076673}
   - component: {fileID: 3249719767769076672}
   - component: {fileID: 3249719767769076675}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

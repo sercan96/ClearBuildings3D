@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1154220751932272943}
   - component: {fileID: 4859259771724597814}
   - component: {fileID: 1871281743696222576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: healthPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +112,6 @@ MonoBehaviour:
   healthAmount: 1
   ammoPowerUp: 0
   ammoAmount: 5
+  period: 2
+  scaleFactor: 0
+  scaleVector: {x: 0, y: 0, z: 0}
