@@ -533,8 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1ab7d325755b64aa7d19444b03bb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
-  particle: {fileID: 0}
+  maxHealth: 3
+  particle: {fileID: 8820631736123596602, guid: d040f5d01fda4cc479b70186c914666e, type: 3}
 --- !u!135 &6125222294346239376
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -546,8 +546,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0570548
-  m_Center: {x: 0.057054758, y: 0, z: 0}
+  m_Radius: 1.0156932
+  m_Center: {x: 0.031289577, y: 0, z: 0.01559639}
 --- !u!114 &3344486134993960816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +580,7 @@ MonoBehaviour:
   shootLayer:
     serializedVersion: 2
     m_Bits: 384
+  isReloaded: 0
 --- !u!114 &123918207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,9 +596,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5422981599200538454, guid: f2207327c692cb046ab12aa36dc5d6cc, type: 3}
   firePos: {fileID: 776708510108149216}
   rateOfFire: 0.1
-  maxAmmo: 30
+  maxAmmo: 5
   isPlayer: 0
   isEnemy: 1
+  maxEnemyAmmo: 5
 --- !u!1 &7925253862720926650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d483b4637a2e1b84999ed6e843dd932a, type: 2}
+    - target: {fileID: 7957612274879326179, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8504398960598362532, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
       propertyPath: m_Name
       value: gun

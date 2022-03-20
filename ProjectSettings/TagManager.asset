@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - bullet
   - Particle
+  - Armory1
   layers:
   - Default
   - TransparentFX

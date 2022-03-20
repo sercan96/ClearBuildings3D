@@ -8,19 +8,39 @@ public class EnemyShotControl : MonoBehaviour
     [SerializeField] private float shotRange = 10;
     [SerializeField] private LayerMask shootLayer;
     private Attack attackScript;
+    [SerializeField] bool isReloaded;
+    private float reloadTime = 5f;
 
     void Start()
     {
         attackScript = GetComponent<Attack>();
+
     }
 
     void Update()
     {
+      
         if(Aim())
         {
             Fire();
         }
-     
+        RateOfEnemyAttack();
+    }
+    void Reload()
+    {
+        // Düşmanın mermisini asıl mermi propertisine eşitledik.
+        // Get bölümünde return maxEnemyAmmo = 5; olduğu için 5 değerini GetAmmo ya atamış olduk.
+        attackScript.GetAmmo = attackScript.enemyAmmoCount;  
+        isReloaded= false;
+    }
+    void RateOfEnemyAttack()
+    {
+        if(attackScript.GetAmmo <= 0 && isReloaded == false)
+        {
+            Invoke(nameof(Reload), reloadTime);
+            isReloaded = true;
+        }
+   
     }
     /// <summary>
     /// 1. Başlangıç pozisyonu
