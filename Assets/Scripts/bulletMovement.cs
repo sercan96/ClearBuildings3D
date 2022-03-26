@@ -40,9 +40,9 @@ public class bulletMovement : MonoBehaviour
     {
         transform.position += transform.up * Time.deltaTime * speed; // local y açısı
     }
-    void OnTriggerEnter(Collider other)
+    async void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Target>() == null && other.gameObject.tag == "Player" && other.gameObject.name != "healthPowerUp" && other.gameObject.name !="ammoPowerUp") 
+        if(other.gameObject.GetComponent<Target>() && other.gameObject.tag == "Player" && other.gameObject.name != "healthPowerUp" && other.gameObject.name !="ammoPowerUp" || other.gameObject.tag == "wall") 
         // çarptığı objede Target scripti yoksa ve player objem değilse mermiyi yok et.
         {
             Destroy(gameObject);

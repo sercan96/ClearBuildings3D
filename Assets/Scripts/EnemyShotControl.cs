@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyShotControl : MonoBehaviour
 {
+
+
+    Movement movement;
     [SerializeField] private Transform aimTransform;
     [SerializeField] private float shotRange = 10;
     [SerializeField] private LayerMask shootLayer;
@@ -14,7 +17,7 @@ public class EnemyShotControl : MonoBehaviour
     void Start()
     {
         attackScript = GetComponent<Attack>();
-
+        
     }
 
     void Update()

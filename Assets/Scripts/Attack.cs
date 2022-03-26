@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+
     public GameObject[] weapons;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject firePos;
@@ -34,6 +35,9 @@ public class Attack : MonoBehaviour
             rateOfFire = value;
         }
     }
+    EnemyShotControl enemyShotControl = new EnemyShotControl();
+    
+
 
     void Start()
     {

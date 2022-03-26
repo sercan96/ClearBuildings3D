@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  particle: {fileID: 8820631736123596602, guid: d040f5d01fda4cc479b70186c914666e, type: 3}
+  playerDeadParticle: {fileID: 7548989452776863093, guid: 4db21ccd1e0f23a469eb773c6ac5465d, type: 3}
 --- !u!135 &6125222294346239376
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -593,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa3d2ee690471c4c977def5409fd159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapons: []
   bulletPrefab: {fileID: 5422981599200538454, guid: f2207327c692cb046ab12aa36dc5d6cc, type: 3}
   firePos: {fileID: 776708510108149216}
   rateOfFire: 0.1

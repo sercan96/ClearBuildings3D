@@ -9,6 +9,7 @@ TagManager:
   - Particle
   - Armory1
   - bullet
+  - wall
   layers:
   - Default
   - TransparentFX

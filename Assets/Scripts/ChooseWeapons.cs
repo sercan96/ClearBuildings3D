@@ -9,6 +9,7 @@ public class ChooseWeapons : MonoBehaviour
    [SerializeField] private Transform FirePos;
    [SerializeField] private int ammoCount;
 
+
     public int GetCurrentWeaponAmmoCount
     {
         get
@@ -35,7 +36,7 @@ public class ChooseWeapons : MonoBehaviour
         {
             case "1":
                 // Silahların kalan mermi sayılarını tutmamız için gerekli kod.
-
+                
                 // GetCurrentWeaponAmmoCount = attack.weapons[1].gameObject.GetComponent<Attack>().GetAmmo;
                 // GetCurrentWeaponAmmoCount = attack.weapons[2].gameObject.GetComponent<Attack>().GetAmmo;
                 attack.weapons[0].SetActive(true);
