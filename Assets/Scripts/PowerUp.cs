@@ -9,26 +9,24 @@ public class PowerUp : MonoBehaviour
     public bool healthPowerUp =false;
     [SerializeField] int  healthAmount = 1;
     [Header("Ammo Setting")]
-    public bool ammoPowerUp =false;   
-
-   [SerializeField] int  ammoAmount = 5;
-   Attack attack;
-   Target target;
-   [Header("Scale Settings")]
-   [SerializeField]private float period = 2f;
-   [SerializeField] float scaleFactor;
-   [SerializeField] Vector3 scaleVector;
-   private int turnspeed =2;
-   private Vector3 startScale;
-   private AudioSource _audioSource;
-   private AudioClip _audioClip;
+    public bool ammoPowerUp =false; 
+    [SerializeField] int  ammoAmount = 5;
+    [Header("Scale Settings")]
+    [SerializeField]private float period = 2f;
+    [SerializeField] float scaleFactor;
+    [SerializeField] Vector3 scaleVector;
+    [SerializeField] private AudioClip _audioClip;
+   
+    private int turnspeed =2;
+    private Vector3 startScale;
+    private Attack attack;
+    private Target target;
     void Start()
     {
         startScale = transform.localScale; // powerUp büyüklüğünü tutacak.
 
         attack =GameObject.Find("Player").GetComponent<Attack>();
         target = GameObject.Find("Player").GetComponent<Target>();
-        _audioSource = GetComponent<AudioSource>();
         HealthandAmmoPowerUp();
     } 
     void HealthandAmmoPowerUp()
@@ -80,7 +78,8 @@ public class PowerUp : MonoBehaviour
         {
             return;
         }
-        _audioSource.Play();
+
+        AudioSource.PlayClipAtPoint(_audioClip, transform.position);
         if(healthPowerUp)
         {
             if(other.gameObject.CompareTag("Player"))  // other.gameObject.CompareTag("Player"), Player objesinin target scripti ile işlem yapacaz.

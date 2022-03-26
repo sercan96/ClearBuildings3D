@@ -209,3 +209,4 @@ MonoBehaviour:
   period: 2
   scaleFactor: 1
   scaleVector: {x: 0.3, y: 0.3, z: 0.3}
+  _audioClip: {fileID: 8300000, guid: 100b6997dc205ad4a9483dec6187a045, type: 3}

@@ -1281,10 +1281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa3d2ee690471c4c977def5409fd159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 9064036770817495257}
-  - {fileID: 4192728594239287008}
-  - {fileID: 8076663486793619839}
   bulletPrefab: {fileID: 5422981599200538454, guid: f2207327c692cb046ab12aa36dc5d6cc, type: 3}
   firePos: {fileID: 2734969604773296722}
   rateOfFire: 0.2
@@ -1292,6 +1288,10 @@ MonoBehaviour:
   isPlayer: 1
   isEnemy: 0
   maxEnemyAmmo: 5
+  weapons:
+  - {fileID: 9064036770817495257}
+  - {fileID: 4192728594239287008}
+  - {fileID: 8076663486793619839}
 --- !u!136 &411017630
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1333,7 +1333,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.243
+  m_Volume: 0.056
   m_Pitch: 1
   Loop: 0
   Mute: 0

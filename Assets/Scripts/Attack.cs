@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-
-    public GameObject[] weapons;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject firePos;
     [SerializeField] float rateOfFire;
     [SerializeField] private int maxAmmo =35;
+    [SerializeField] private bool isPlayer = false;
+    [SerializeField] private bool isEnemy = false;
+    [SerializeField] private int  maxEnemyAmmo =5;
+    
+    public GameObject[] weapons;
+
     private int ammoCount;
     public int GetAmmo { get{return ammoCount;} set{ammoCount = value; if(ammoCount > maxAmmo) ammoCount = maxAmmo;  }}
     // private Rigidbody rb; // Başka bir objenin Rigidbody si ile işlem yap.
     // private Rigidbody rb2;  // Bu scripte bağlı olan objenin Rigidbody si ile işlem yap.
     private AudioClip _audioClip;
-
     public AudioClip GetAudioClip
     {
         get => _audioClip;
         set => _audioClip = value;
     }
-    [SerializeField] private bool isPlayer = false;
-    [SerializeField] private bool isEnemy = false;
-    [SerializeField] private int  maxEnemyAmmo =5;
+   
     private AudioSource audioSource;
-    
     public int enemyAmmoCount 
     {
         get

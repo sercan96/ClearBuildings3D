@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform[] movePoint;
+    
     private bool canMoveRight = false;
     private float speed =5;
     private EnemyShotControl enemyShotControl;

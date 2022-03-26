@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private int maxHealth; // maxHealth inspector'de bir kez değiştirilecek.
     private int _currentHealth;
@@ -30,7 +29,6 @@ void Start()
     // Bunu yapmamizin sebebi maxHealth değerini inspectorde player ve enemy objesini ayrı değer girdik.
     // player maxHealth = 10, enemy maxHealth = 3;
     // Start'ta yazmamızın sebebi bu obje oluştuğu anda Start edileceği için maxHealth değerini alacak.
-    _audioSource = GetComponent<AudioSource>();
 }
  private void OnTriggerEnter(Collider other) // 3.Yol
  {
@@ -40,7 +38,7 @@ void Start()
         _currentHealth--;
         GameObject go =Instantiate(playerDeadParticle,transform.position,Quaternion.identity);
         Destroy(go,0.5f);
-        _audioSource.PlayOneShot(_audioClip);
+        AudioSource.PlayClipAtPoint(_audioClip,transform.position); // Sadece klip ile sesi aldık.
         if(_currentHealth <= 0)
         {
             Die();

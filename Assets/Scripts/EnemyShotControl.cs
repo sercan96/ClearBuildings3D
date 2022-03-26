@@ -9,9 +9,11 @@ public class EnemyShotControl : MonoBehaviour
     [SerializeField] private float shotRange = 10;
     [SerializeField] private LayerMask shootLayer;
     [SerializeField] bool isReloaded;
+    
     private Attack _attackScript;
     private float reloadTime = 5f;
-    Movement movement;
+    private Movement movement;
+    [SerializeField] private AudioClip _audioClip;
 
     public EnemyShotControl(Movement movement)
     {
@@ -62,6 +64,8 @@ public class EnemyShotControl : MonoBehaviour
     }
     void Fire()
     {
-        _attackScript.Enemy(0.8f);
+        _attackScript.Enemy(0.5f);
+        _attackScript.GetAudioClip = _audioClip;
+
     }
 }
