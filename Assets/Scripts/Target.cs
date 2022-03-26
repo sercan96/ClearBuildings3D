@@ -43,8 +43,6 @@ void Start()
         _audioSource.PlayOneShot(_audioClip);
         if(_currentHealth <= 0)
         {
-            // particle.SetActive(false); 
-    
             Die();
         }
      }

@@ -20,12 +20,15 @@ public class PowerUp : MonoBehaviour
    [SerializeField] Vector3 scaleVector;
    private int turnspeed =2;
    private Vector3 startScale;
+   private AudioSource _audioSource;
+   private AudioClip _audioClip;
     void Start()
     {
         startScale = transform.localScale; // powerUp büyüklüğünü tutacak.
 
         attack =GameObject.Find("Player").GetComponent<Attack>();
         target = GameObject.Find("Player").GetComponent<Target>();
+        _audioSource = GetComponent<AudioSource>();
         HealthandAmmoPowerUp();
     } 
     void HealthandAmmoPowerUp()
@@ -73,6 +76,11 @@ public class PowerUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if(!other.gameObject.CompareTag(("Player")))
+        {
+            return;
+        }
+        _audioSource.Play();
         if(healthPowerUp)
         {
             if(other.gameObject.CompareTag("Player"))  // other.gameObject.CompareTag("Player"), Player objesinin target scripti ile işlem yapacaz.
