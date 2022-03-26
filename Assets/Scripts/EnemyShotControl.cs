@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class EnemyShotControl : MonoBehaviour
 {
-
-
-    Movement movement;
+    
     [SerializeField] private Transform aimTransform;
     [SerializeField] private float shotRange = 10;
     [SerializeField] private LayerMask shootLayer;
-    private Attack attackScript;
     [SerializeField] bool isReloaded;
+    private Attack _attackScript;
     private float reloadTime = 5f;
+    Movement movement;
+
+    public EnemyShotControl(Movement movement)
+    {
+        this.movement = movement;
+    }
 
     void Start()
     {
-        attackScript = GetComponent<Attack>();
+        _attackScript = GetComponent<Attack>();
         
     }
 
@@ -33,17 +37,16 @@ public class EnemyShotControl : MonoBehaviour
     {
         // Düşmanın mermisini asıl mermi propertisine eşitledik.
         // Get bölümünde return maxEnemyAmmo = 5; olduğu için 5 değerini GetAmmo ya atamış olduk.
-        attackScript.GetAmmo = attackScript.enemyAmmoCount;  
+        _attackScript.GetAmmo = _attackScript.enemyAmmoCount;  
         isReloaded= false;
     }
     void RateOfEnemyAttack()
     {
-        if(attackScript.GetAmmo <= 0 && isReloaded == false)
+        if (_attackScript.GetAmmo <= 0 && isReloaded == false)
         {
             Invoke(nameof(Reload), reloadTime);
             isReloaded = true;
         }
-   
     }
     /// <summary>
     /// 1. Başlangıç pozisyonu
@@ -59,6 +62,6 @@ public class EnemyShotControl : MonoBehaviour
     }
     void Fire()
     {
-        attackScript.Enemy(0.8f);
+        _attackScript.Enemy(0.8f);
     }
 }

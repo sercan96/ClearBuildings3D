@@ -8,19 +8,14 @@ public class ChooseWeapons : MonoBehaviour
    [SerializeField] private float FireRate;
    [SerializeField] private Transform FirePos;
    [SerializeField] private int ammoCount;
-
-
-    public int GetCurrentWeaponAmmoCount
-    {
-        get
-        {
-            return ammoCount;
-        }
-        set
-        {
-            ammoCount = value;
-        }
-    }
+   [SerializeField] private AudioClip _audioClip;
+   
+   // public int GetCurrentWeaponAmmoCount
+   //  {
+   //      get => ammoCount;
+   //      set => ammoCount = value;
+   //  }
+   
     void Update()
     {
         SelectWeapons();
@@ -29,6 +24,7 @@ public class ChooseWeapons : MonoBehaviour
     {
         attack.GetFireRate = FireRate;
         attack.GetAmmo = ammoCount;
+        attack.GetAudioClip = _audioClip;
     }
     void SelectWeapons()
     {
@@ -44,16 +40,12 @@ public class ChooseWeapons : MonoBehaviour
                 attack.weapons[2].SetActive(false);
                 break;
             case "2":
-                //  GetCurrentWeaponAmmoCount = attack.weapons[0].GetComponent<Attack>().GetAmmo;
-                //  GetCurrentWeaponAmmoCount = attack.weapons[2].GetComponent<Attack>().GetAmmo;
-                 attack.weapons[1].SetActive(true);
+                attack.weapons[1].SetActive(true);
                  attack.weapons[0].SetActive(false);
                  attack.weapons[2].SetActive(false);
                 break;
             case "3":
-                 // ammoCount = attack.weapons[0].GetComponent<Attack>().GetAmmo;
-                 // ammoCount = attack.weapons[1].GetComponent<Attack>().GetAmmo;
-                 attack.weapons[2].SetActive(true);
+                attack.weapons[2].SetActive(true);
                  attack.weapons[0].SetActive(false);
                  attack.weapons[1].SetActive(false);
                 break;

@@ -14,9 +14,18 @@ public class Attack : MonoBehaviour
     public int GetAmmo { get{return ammoCount;} set{ammoCount = value; if(ammoCount > maxAmmo) ammoCount = maxAmmo;  }}
     // private Rigidbody rb; // Başka bir objenin Rigidbody si ile işlem yap.
     // private Rigidbody rb2;  // Bu scripte bağlı olan objenin Rigidbody si ile işlem yap.
+    private AudioClip _audioClip;
+
+    public AudioClip GetAudioClip
+    {
+        get => _audioClip;
+        set => _audioClip = value;
+    }
     [SerializeField] private bool isPlayer = false;
     [SerializeField] private bool isEnemy = false;
     [SerializeField] private int  maxEnemyAmmo =5;
+    private AudioSource audioSource;
+    
     public int enemyAmmoCount 
     {
         get
@@ -35,13 +44,10 @@ public class Attack : MonoBehaviour
             rateOfFire = value;
         }
     }
-    EnemyShotControl enemyShotControl = new EnemyShotControl();
-    
-
-
-    void Start()
+    // EnemyShotControl enemyShotControl = new EnemyShotControl();
+    void Awake()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }   
     void Update()
     {
@@ -87,7 +93,8 @@ public class Attack : MonoBehaviour
                 Instantiate(bulletPrefab,firePos.gameObject.transform.position,Quaternion.Euler(0f,0f,90f));   // sol (90 dan küçük)
             }   
             rateOfFire = timeofFire; 
-            ammoCount --;                                 
+            ammoCount --;
+            audioSource.PlayOneShot(_audioClip);
         }
                   
     }

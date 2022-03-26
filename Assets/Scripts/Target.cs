@@ -4,44 +4,44 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    
-[SerializeField] private int maxHealth =3; // maxHealth inspector'de bir kez değiştirilecek.
-private int currentHealth;
-public int GetHealth
-{
-    get
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private int maxHealth; // maxHealth inspector'de bir kez değiştirilecek.
+    private int _currentHealth;
+    public int GetHealth
     {
-        return currentHealth;
-    }
-    set
-    {
-        currentHealth = value; 
-        if(currentHealth > maxHealth)
+        get => _currentHealth;
+        set
         {
-            currentHealth = maxHealth;
+        _currentHealth = value; 
+        if(_currentHealth > maxHealth)
+        {
+            _currentHealth = maxHealth;
         }
+        } 
     }
-
-}
  //public GameObject particle;
 [SerializeField]
 private GameObject playerDeadParticle;
 
 void Start()
 {
-    currentHealth = maxHealth; 
-    // Bunu yapmamızın sebebi maxHealth değerini bu obje için sabit kılıyoruz. 
-    // İlerde başka bir obje GetHealth ile değerini değiştirirse bu değişkenin değerini tutmuş oluyoruz.
+    _currentHealth = maxHealth; // Başlangıçta can değerimizi belirledik. Değiştirilebilme durumuna karşın.
+    // Bunu yapmamizin sebebi maxHealth değerini inspectorde player ve enemy objesini ayrı değer girdik.
+    // player maxHealth = 10, enemy maxHealth = 3;
+    // Start'ta yazmamızın sebebi bu obje oluştuğu anda Start edileceği için maxHealth değerini alacak.
+    _audioSource = GetComponent<AudioSource>();
 }
  private void OnTriggerEnter(Collider other) // 3.Yol
  {
      if(other.gameObject.GetComponent<bulletMovement>())
      {
         // Destroy(other.gameObject);
-        currentHealth--;
+        _currentHealth--;
         GameObject go =Instantiate(playerDeadParticle,transform.position,Quaternion.identity);
         Destroy(go,0.5f);
-        if(currentHealth <= 0)
+        _audioSource.PlayOneShot(_audioClip);
+        if(_currentHealth <= 0)
         {
             // particle.SetActive(false); 
     
