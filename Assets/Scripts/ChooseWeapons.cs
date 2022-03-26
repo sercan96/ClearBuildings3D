@@ -51,8 +51,8 @@ public class ChooseWeapons : MonoBehaviour
                  attack.weapons[2].SetActive(false);
                 break;
             case "3":
-                 ammoCount = attack.weapons[0].GetComponent<Attack>().GetAmmo;
-                 ammoCount = attack.weapons[1].GetComponent<Attack>().GetAmmo;
+                 // ammoCount = attack.weapons[0].GetComponent<Attack>().GetAmmo;
+                 // ammoCount = attack.weapons[1].GetComponent<Attack>().GetAmmo;
                  attack.weapons[2].SetActive(true);
                  attack.weapons[0].SetActive(false);
                  attack.weapons[1].SetActive(false);
