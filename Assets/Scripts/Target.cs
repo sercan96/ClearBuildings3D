@@ -12,11 +12,11 @@ public class Target : MonoBehaviour
         get => _currentHealth;
         set
         {
-        _currentHealth = value; 
-        if(_currentHealth > maxHealth)
-        {
-            _currentHealth = maxHealth;
-        }
+            _currentHealth = value; 
+            if(_currentHealth > maxHealth)
+            {
+                _currentHealth = maxHealth;
+            }
         } 
     }
  //public GameObject particle;

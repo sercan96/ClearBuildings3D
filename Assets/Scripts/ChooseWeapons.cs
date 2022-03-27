@@ -7,7 +7,12 @@ public class ChooseWeapons : MonoBehaviour
    [SerializeField] Attack attack;
    [SerializeField] private float FireRate;
    [SerializeField] private Transform FirePos;
-   [SerializeField] private int ammoCount;
+   [SerializeField] private int maxCount;
+   private int ammoCount;
+   public int GetAmmoCount
+   {
+       get => ammoCount;
+   }
    [SerializeField] private AudioClip _audioClip;
    
    // public int GetCurrentWeaponAmmoCount
@@ -15,7 +20,11 @@ public class ChooseWeapons : MonoBehaviour
    //      get => ammoCount;
    //      set => ammoCount = value;
    //  }
-   
+   void Awake()
+   {
+       ammoCount = maxCount;
+       attack.maxAmmo = maxCount;
+   }
     void Update()
     {
         SelectWeapons();
@@ -26,7 +35,7 @@ public class ChooseWeapons : MonoBehaviour
         attack.GetAmmo = ammoCount;
         attack.GetAudioClip = _audioClip;
     }
-    void SelectWeapons()
+    public void SelectWeapons()
     {
         switch(Input.inputString)
         {

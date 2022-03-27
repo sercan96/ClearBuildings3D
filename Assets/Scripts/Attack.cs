@@ -7,11 +7,11 @@ public class Attack : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject firePos;
     [SerializeField] float rateOfFire;
-    [SerializeField] private int maxAmmo =35;
+    public int maxAmmo ;
     [SerializeField] private bool isPlayer = false;
     [SerializeField] private bool isEnemy = false;
-    [SerializeField] private int  maxEnemyAmmo =5;
-    
+    [SerializeField] private int maxEnemyAmmo = 5;
+
     public GameObject[] weapons;
 
     private int ammoCount;
@@ -43,6 +43,11 @@ public class Attack : MonoBehaviour
         {
             rateOfFire = value;
         }
+    }
+
+    public int GetClipSize
+    {
+        get => maxAmmo;
     }
     // EnemyShotControl enemyShotControl = new EnemyShotControl();
     void Awake()
