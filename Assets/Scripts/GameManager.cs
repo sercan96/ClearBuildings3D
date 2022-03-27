@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject LevelFinishedParent;
     private bool _isGameActive = true;
     private Target _playerHealth;
-    
+
     public bool GetIsGameActive
     {
         get => _isGameActive;
@@ -24,10 +24,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (true) // yorum satırına almak gibi.
-        {
-            return;
-        }
         int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         if (enemyCount <= 0 || _playerHealth.GetHealth <= 0)
         {
