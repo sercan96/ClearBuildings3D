@@ -13,7 +13,7 @@ public class CanvasUI : MonoBehaviour
 
     private Attack _playerAmmo;
     private Target _playerHealth;
-    public ChooseWeapons _chooseWeapons;
+    private ChooseWeapons _chooseWeapons;
     private int healthFillAmaount = 10;
     void Start()
     {
