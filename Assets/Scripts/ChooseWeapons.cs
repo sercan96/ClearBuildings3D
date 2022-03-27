@@ -33,6 +33,7 @@ public class ChooseWeapons : MonoBehaviour
     {
         attack.GetFireRate = FireRate;
         attack.GetAmmo = ammoCount;
+        attack.GetClipSize = ammoCount;
         attack.GetAudioClip = _audioClip;
     }
     public void SelectWeapons()

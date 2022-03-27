@@ -7,13 +7,13 @@ public class Attack : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject firePos;
     [SerializeField] float rateOfFire;
-    public int maxAmmo ;
     [SerializeField] private bool isPlayer = false;
     [SerializeField] private bool isEnemy = false;
     [SerializeField] private int maxEnemyAmmo = 5;
 
     public GameObject[] weapons;
-
+    public int maxAmmo ;
+    
     private int ammoCount;
     public int GetAmmo { get{return ammoCount;} set{ammoCount = value; if(ammoCount > maxAmmo) ammoCount = maxAmmo;  }}
     // private Rigidbody rb; // Başka bir objenin Rigidbody si ile işlem yap.
@@ -26,28 +26,21 @@ public class Attack : MonoBehaviour
     }
    
     private AudioSource audioSource;
-    public int enemyAmmoCount 
+    public int enemyAmmoCount
     {
-        get
-        {
-            return maxEnemyAmmo;
-        }
-    } 
+        get => maxEnemyAmmo;
+    }
+
     public float GetFireRate
     {
-        get
-        {
-            return rateOfFire;
-        }
-        set
-        {
-            rateOfFire = value;
-        }
+        get => rateOfFire;
+        set => rateOfFire = value;
     }
 
     public int GetClipSize
     {
         get => maxAmmo;
+        set => maxAmmo = value;
     }
     // EnemyShotControl enemyShotControl = new EnemyShotControl();
     void Awake()
