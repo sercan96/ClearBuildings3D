@@ -11,6 +11,8 @@ public class Attack : MonoBehaviour
     [SerializeField] private bool isEnemy = false;
     [SerializeField] private int maxEnemyAmmo = 5;
 
+    private GameManager _gameManager;
+
     public GameObject[] weapons;
     public int maxAmmo ;
     
@@ -46,6 +48,7 @@ public class Attack : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }   
     void Update()
     {
@@ -59,7 +62,7 @@ public class Attack : MonoBehaviour
     }
     void Player()
     {
-        if(isPlayer)
+        if(isPlayer && _gameManager.GetIsGameActive)
         {
             if(Input.GetMouseButtonDown(0)) 
             {

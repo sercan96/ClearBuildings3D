@@ -8,13 +8,13 @@ public class Movement : MonoBehaviour
     [SerializeField] float speed ;
     [SerializeField] float jumpPower = 13f;
     [SerializeField] float turnspeed = 15;
-   
-       
     // [SerializeField] List<Transform> ground = new List<Transform>();
     [SerializeField] Transform[] rayStartPoints;
+    private GameManager _gameManager;
     void Start()
     {
         rb = GetComponent<Rigidbody>(); // Yeni bir rigidbody oluşturduk new leme işlemi
+        _gameManager =GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     public void GetInput()
     {
@@ -38,6 +38,10 @@ public class Movement : MonoBehaviour
     }
     public void TakeInput()  
     {
+        if (!_gameManager.GetIsGameActive)
+        {
+            return; // oyun aktif değilse metodu bitir.
+        }
         //transform.Translate(Vector3.forward);
         // transform.Translate(transform.forward);
         if(Input.GetKeyDown(KeyCode.Space) && OnGroundCheck())

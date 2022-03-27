@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
 
-public class CanvasUI : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public Image healthImage;
     public Image AmmoFill;

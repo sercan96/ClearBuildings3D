@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7925253860790407152}
   - component: {fileID: 7925253860790407165}
   - component: {fileID: 7925253860790407154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: j_button1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7925253861033058861}
   - component: {fileID: 7925253861033058862}
   - component: {fileID: 7925253861033058863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7925253862207969258}
   - component: {fileID: 7925253862207969239}
   - component: {fileID: 7925253862207969236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: j_button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7925253862269603614}
   - component: {fileID: 7925253862269603611}
   - component: {fileID: 7925253862269603608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: j_button1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 7925253862398037038}
   - component: {fileID: 7925253862398037035}
   - component: {fileID: 7925253862398037032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: j_button1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,9 +423,9 @@ GameObject:
   - component: {fileID: 123918206}
   - component: {fileID: 123918207}
   - component: {fileID: 3623651877430635296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,11 +599,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5422981599200538454, guid: f2207327c692cb046ab12aa36dc5d6cc, type: 3}
   firePos: {fileID: 776708510108149216}
   rateOfFire: 0.1
-  maxAmmo: 5
   isPlayer: 0
   isEnemy: 1
   maxEnemyAmmo: 5
   weapons: []
+  maxAmmo: 5
 --- !u!82 &3623651877430635296
 AudioSource:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.189
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 7925253862720926629}
   - component: {fileID: 7925253862720926630}
   - component: {fileID: 7925253862720926631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jacket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 7925253862780660433}
   - component: {fileID: 7925253862780660434}
   - component: {fileID: 7925253862780660435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,7 +871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8392081236986740031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -901,7 +901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8392081237082756916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck (2)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -931,7 +931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8392081237209156433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 8392081237947898635}
   - component: {fileID: 8392081237947898633}
   - component: {fileID: 8392081237947898634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: anten1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 8392081237993733873}
   - component: {fileID: 8392081237993733874}
   - component: {fileID: 8392081237993733875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 8392081238324274163}
   - component: {fileID: 8392081238324274164}
   - component: {fileID: 8392081238324274165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1235,7 @@ GameObject:
   - component: {fileID: 8392081238990770738}
   - component: {fileID: 8392081238990770736}
   - component: {fileID: 8392081238990770737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: anten1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1321,10 +1321,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4aac98aef254ecf429643db51adb8f72, type: 2}
+    - target: {fileID: 2911720135579781385, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3892868936985684987, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d6e7475a477721949a7fa2353ffb7e32, type: 2}
+    - target: {fileID: 4744196279941025363, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4879292136258924681, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1369,17 +1377,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5746396130350456960, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6303634533551248856, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d483b4637a2e1b84999ed6e843dd932a, type: 2}
+    - target: {fileID: 6445983747906172252, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120781710421933297, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7957612274879326179, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8233010619596531692, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8504398960598362532, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
       propertyPath: m_Name
       value: gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504398960598362532, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129294704688602710, guid: 934e02169c110484c94fc1aff9df7484, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1435123050, guid: 934e02169c110484c94fc1aff9df7484, type: 3}

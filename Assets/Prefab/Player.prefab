@@ -1284,7 +1284,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5422981599200538454, guid: f2207327c692cb046ab12aa36dc5d6cc, type: 3}
   firePos: {fileID: 2734969604773296722}
   rateOfFire: 0.2
-  maxAmmo: 30
   isPlayer: 1
   isEnemy: 0
   maxEnemyAmmo: 5
@@ -1292,6 +1291,7 @@ MonoBehaviour:
   - {fileID: 9064036770817495257}
   - {fileID: 4192728594239287008}
   - {fileID: 8076663486793619839}
+  maxAmmo: 30
 --- !u!136 &411017630
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1ab7d325755b64aa7d19444b03bb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: a96280ab0386e384fa0633e56101bb6f, type: 3}
   maxHealth: 10
   playerDeadParticle: {fileID: 7548989452776863093, guid: 4db21ccd1e0f23a469eb773c6ac5465d, type: 3}
 --- !u!82 &6360491777112574787
@@ -1333,7 +1333,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.056
+  m_Volume: 0.11
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1511,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044650446841613123, guid: 18dcb1a4510a2e74fbe23c8c4eab8278, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676509729144361465, guid: 18dcb1a4510a2e74fbe23c8c4eab8278, type: 3}
       propertyPath: m_RootOrder
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   attack: {fileID: 1052217650}
   FireRate: 2
   FirePos: {fileID: 5834447274546575456}
-  ammoCount: 5
+  maxCount: 5
   _audioClip: {fileID: 8300000, guid: ad98a91c0eb452545838dc5784ee6c00, type: 3}
 --- !u!1001 &3130396952112343102
 PrefabInstance:
@@ -1620,7 +1620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6248896328109717735, guid: 26544fc2534bfd342b9a0df623f565cd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6769854405442839133, guid: 26544fc2534bfd342b9a0df623f565cd, type: 3}
       propertyPath: m_RootOrder
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   attack: {fileID: 1052217650}
   FireRate: 0.5
   FirePos: {fileID: 5969301294369674248}
-  ammoCount: 10
+  maxCount: 15
   _audioClip: {fileID: 8300000, guid: 1bae494782738de43a353eae6daf9c2b, type: 3}
 --- !u!1001 &7153846386698588249
 PrefabInstance:
@@ -1824,5 +1824,5 @@ MonoBehaviour:
   attack: {fileID: 1052217650}
   FireRate: 0.1
   FirePos: {fileID: 3830957191392216039}
-  ammoCount: 30
+  maxCount: 30
   _audioClip: {fileID: 8300000, guid: 18b39c81e9dc8d44f8c38ad984c8bf48, type: 3}
